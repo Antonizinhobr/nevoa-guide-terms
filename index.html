@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos e Privacidade - [Nome do Seu Bot]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://img.icons8.com/?size=100&id=7AXocxekmFcC&format=png&color=000000" type="image/png">
+    <style>
+        :root {
+            --dbd-red: #8a0000;
+            --dbd-red-glow: rgba(138, 0, 0, 0.7);
+            --bg-color: #0a0a0a;
+            --text-color: #d1d1d1;
+            --container-bg: rgba(20, 20, 20, 0.9);
+            --border-color: #333;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .fog-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.4;
+            background: url('https://raw.githubusercontent.com/danielstuart14/CSS_FOG_ANIMATION/master/fog1.png') repeat-x;
+            background-size: 200% auto;
+            animation: fogAnim 60s linear infinite;
+        }
+        @keyframes fogAnim {
+            0% { background-position: 0 0; }
+            100% { background-position: -200% 0; }
+        }
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--dbd-red);
+            box-shadow: 0 4px 15px var(--dbd-red-glow);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: var(--dbd-red);
+        }
+        header {
+            text-align: center;
+            padding: 4rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        h1, h2, h3 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+        header h1 {
+            font-size: 4rem;
+            color: var(--dbd-red);
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8), 0 0 20px var(--dbd-red-glow);
+            letter-spacing: 5px;
+            margin-bottom: 1rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            color: #888;
+            font-style: italic;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--container-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+        }
+        .section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section h2 {
+            font-size: 2rem;
+            color: white;
+            border-bottom: 2px solid var(--dbd-red);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .command-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--dbd-red);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: transform 0.2s ease;
+        }
+        .command-card:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .command-card strong {
+            color: var(--dbd-red);
+            font-size: 1.2rem;
+            font-family: 'Oswald', sans-serif;
+        }
+        ul.legal-list {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        ul.legal-list li {
+            margin-bottom: 0.5rem;
+        }
+        .highlight {
+            color: #ff0033;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: black;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+        footer a {
+            color: var(--dbd-red);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="fog-wrapper"></div>
+    <nav>
+        <ul>
+            <li><a href="#comandos">Comandos</a></li>
+            <li><a href="#termos">Termos de Serviço</a></li>
+            <li><a href="#privacidade">Privacidade</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Refúgio da Névoa</h1>
+        <p>"Sua ferramenta definitiva de utilidade, comunidade e inteligência artificial."</p>
+    </header>
+    <div class="container">
+        <section id="comandos" class="section">
+            <h2>📜 Comandos do Bot</h2>
+            <p>O bot foi desenvolvido para otimizar a experiência do servidor, oferecendo guias visuais, uma rede social interna e uma IA sarcástica. Alguns dos principais comandos incluem:</p>
+            <br>
+            <div class="command-card">
+                <strong>/como_enfrentar_killer & /listar_killers</strong>
+                <p>Geram guias visuais detalhados com dicas estratégicas, vídeos e informações sobre o banco de dados do servidor.</p>
+            </div>
+            <div class="command-card">
+                <strong>/postar & /favoritas_postagens</strong>
+                <p>Criam publicações no feed do servidor (com sistema de curtidas e tópicos de comentários) e permitem salvar postagens em uma lista privada de favoritos.</p>
+            </div>
+            <div class="command-card">
+                <strong>/ia</strong>
+                <p>Interage com uma Inteligência Artificial (Google Gemini) configurada com regras estritas de segurança e escopo restrito ao tema do servidor.</p>
+            </div>
+            <div class="command-card">
+                <strong>Comandos de Setup (Admins)</strong>
+                <p><code>/configurar</code> permite que administradores definam o canal exato onde as postagens do feed serão enviadas.</p>
+            </div>
+        </section>
+        <section id="termos" class="section">
+            <h2>⚖️ Termos de Serviço (ToS)</h2>
+            <p>Ao utilizar o bot no seu servidor, você concorda com as seguintes regras:</p>
+            <ul class="legal-list">
+                <li><strong>Uso da Inteligência Artificial:</strong> A IA do bot possui filtros de segurança. É estritamente proibido tentar burlar esses filtros para gerar discurso de ódio, assédio, conteúdo sexual, apologia a crimes ou temas políticos. O desenvolvedor não se responsabiliza pelas respostas geradas pela IA, mas toma medidas para restringir conteúdos impróprios.</li>
+                <li><strong>Rede Social e Publicações:</strong> Os usuários são os únicos responsáveis pelo conteúdo que publicam via comando <code>/postar</code>. É proibido postar imagens ou textos que violem os Termos de Serviço do Discord (NSFW, violência explícita, etc.).</li>
+                <li><strong>Disponibilidade do Serviço:</strong> O desenvolvedor reserva o direito de realizar manutenções, atualizações ou interromper o serviço a qualquer momento. O bot utiliza um banco de dados local para salvar as informações.</li>
+                <li><strong>Propriedade Intelectual:</strong> Este bot é um projeto feito por fã e não é um produto oficial. Nomes de personagens e referências ao jogo pertencem aos seus respectivos criadores.</li>
+            </ul>
+        </section>
+        <section id="privacidade" class="section">
+            <h2>🔒 Política de Privacidade</h2>
+            <p>A privacidade dos usuários é levada a sério. A coleta de dados é estritamente voltada para o funcionamento das ferramentas do bot:</p>
+            <br>
+            <h3>1. Quais dados armazenamos?</h3>
+            <ul class="legal-list">
+                <li><strong>Identificadores:</strong> ID do Usuário do Discord, ID da mensagem postada e ID do Servidor.</li>
+                <li><strong>Dados de Postagens:</strong> Título, texto e URL da imagem enviados via comando <code>/postar</code>.</li>
+                <li><strong>Favoritos e Curtidas:</strong> Lista de IDs de mensagens que cada usuário curtiu ou favoritou.</li>
+                <li><strong>Configurações do Servidor:</strong> ID do canal configurado para receber o feed de postagens.</li>
+            </ul>
+            <h3>2. O que NÃO coletamos? (Muito Importante)</h3>
+            <ul class="legal-list">
+                <li><strong>O bot NÃO armazena o conteúdo de conversas gerais do servidor.</strong> Ele apenas lê os comandos de barra (Slash Commands) quando acionados.</li>
+                <li><strong>Não armazenamos histórico de conversas com a IA.</strong> As perguntas feitas no comando <code>/ia</code> são enviadas para a API do Google Gemini para gerar a resposta, mas não ficam salvas no banco de dados do bot.</li>
+            </ul>
+            <h3>3. Como seus dados são usados?</h3>
+            <p>Os dados armazenados servem única e exclusivamente para manter o funcionamento do feed (para que as curtidas e favoritos não sumam quando o bot reiniciar) e para exibir as listas de pesquisa.</p>
+            <h3>4. Exclusão de Dados</h3>
+            <p>Caso deseje que suas postagens ou interações sejam removidas, você pode deletar a sua própria mensagem no canal de feed. Se desejar apagar todo o seu histórico de favoritos e curtidas, ou se for um administrador querendo limpar os dados do servidor, entre em contato com o desenvolvedor via suporte.</p>
+        </section>
+    </div>
+    <footer>
+        <p>Desenvolvido com 🩸 por <strong>Anthonny Michael</strong> | <a href="https://github.com/Antonizinhobr" target="_blank">GitHub</a></p>
+        <p>Este é um projeto independente. Todas as marcas registradas mencionadas pertencem aos seus respectivos proprietários.</p>
+    </footer>
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const observerOptions = {
+            root: null,
+            threshold: 0.1,
+            rootMargin: "0px"
+        };
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        setTimeout(() => {
+            document.getElementById('comandos').classList.add('visible');
+        }, 300);
+    </script>
+</body>
+</html>
